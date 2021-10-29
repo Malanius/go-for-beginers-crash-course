@@ -27,8 +27,13 @@ func main() {
 
 	// Without assigment, has default value, for int = 0
 	var answer int
+	answer = firstNumber*secondNumber - subtraction
 
-	reader:= bufio.NewReader(os.Stdin)
+	playGame(firstNumber, secondNumber, subtraction, answer)
+}
+
+func playGame(firstNumber int, secondNumber int, subtraction int, answer int) {
+	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Println("Gues the Number Game")
 	fmt.Println("--------------------")
@@ -49,6 +54,5 @@ func main() {
 	fmt.Println("Now subtract", subtraction, promt)
 	reader.ReadString('\n')
 
-	answer = firstNumber * secondNumber - subtraction
 	fmt.Println("The answer is", answer)
 }
