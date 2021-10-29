@@ -62,8 +62,8 @@ func readInt(s string) int {
 		fmt.Println(s)
 		promt()
 		userinput, _ := reader.ReadString('\n')
-		userinput = strings.ReplaceAll(userinput, "\r\n", "")
-		userinput = strings.ReplaceAll(userinput, "\n", "")
+		userinput = strings.Trim(userinput, "\r\n")
+
 		num, err := strconv.Atoi(userinput)
 		if err != nil {
 			fmt.Println("Please enter a whole number!")
@@ -78,8 +78,7 @@ func readFloat(s string) float64 {
 		fmt.Println(s)
 		promt()
 		userinput, _ := reader.ReadString('\n')
-		userinput = strings.ReplaceAll(userinput, "\r\n", "")
-		userinput = strings.ReplaceAll(userinput, "\n", "")
+		userinput = strings.Trim(userinput, "\r\n")
 		num, err := strconv.ParseFloat(userinput, 64)
 		if err != nil {
 			fmt.Println("Please enter a number!")
