@@ -3,8 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	var message string
-	message = "Hello, world!"
+	// var message string
+	// message = "Hello, world!"
+	message := "Hello, world!"
 	saySomething(message)
 }
 
