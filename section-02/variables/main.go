@@ -32,7 +32,7 @@ func main() {
 	playGame(firstNumber, secondNumber, subtraction, answer)
 }
 
-func playGame(firstNumber int, secondNumber int, subtraction int, answer int) {
+func playGame(firstNumber, secondNumber, subtraction, answer int) {
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Println("Gues the Number Game")
