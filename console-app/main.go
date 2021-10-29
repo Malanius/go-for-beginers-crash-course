@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"strconv"
 
 	"github.com/eiannone/keyboard"
 )
@@ -17,6 +18,14 @@ func main() {
 	defer func() {
 		_ = keyboard.Close()
 	}()
+
+	coffes := make(map[int]string)
+	coffes[1] = "Cappucino"
+	coffes[2] = "Latte"
+	coffes[3] = "Ameriacno"
+	coffes[4] = "Mocha"
+	coffes[5] = "Latte Macchiato"
+	coffes[6] = "Espresso"
 
 	fmt.Println("MENU")
 	fmt.Println("----")
@@ -34,13 +43,13 @@ func main() {
 			log.Fatal(err)
 		}
 
-		text:= fmt.Sprintf("You chose %q", char)
-		fmt.Println(text)
-
 		if char == 'q' || char == 'Q' {
 			break
 		}
 
+		i, _ := strconv.Atoi(string(char))
+		text := fmt.Sprintf("You chose %s", coffes[i])
+		fmt.Println(text)
 	}
 
 	fmt.Println("Program exitting...")
