@@ -3,22 +3,27 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math/rand"
 	"os"
+	"time"
 )
 
 // Constant
-const promt = "and press ENTER when ready..."
+const promt = "and don't type your number in, just press ENTER..."
 
 func main() {
+	// Seeding rng
+	rand.Seed(time.Now().UnixNano())
+
 	// Declare and assign separately
 	var firstNumber int
-	firstNumber = 2
+	firstNumber = rand.Intn(8) + 2
 
 	// Declare and assign value
-	var secondNumber = 5
+	var secondNumber = rand.Intn(8) + 2
 
 	// declare and assign with := operator
-	subtraction := 7
+	subtraction := rand.Intn(8) + 2
 
 	// Without assigment, has default value, for int = 0
 	var answer int
